@@ -1,5 +1,5 @@
 # Base Docker Image
-ARG BASE_IMAGE=alpine:3.12
+ARG BASE_IMAGE=alpine:3
 FROM ${BASE_IMAGE} as builder
 
 # Install all needed build deps for Mesa3D
@@ -104,7 +104,7 @@ RUN set -xe; \
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Create fresh image from alpine
-ARG BASE_IMAGE=alpine:3.12
+ARG BASE_IMAGE=alpine:3
 FROM ${BASE_IMAGE}
 
 # Copy the Mesa build & entrypoint script from previous stage
